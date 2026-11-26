@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+dist/
+build/
+*.egg-info/
+*.db
+*.db-wal
+*.db-shm
+.DS_Store
+# local state: never commit catalogs, plans, logs or machine config
+/driveaudit.toml
+plan*.json
+*.files0
+*.log

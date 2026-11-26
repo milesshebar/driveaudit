@@ -1,0 +1,27 @@
+# Copy to ~/.config/driveaudit/config.toml (or pass --config FILE) and adjust.
+# A driveaudit.toml in the current directory is NOT loaded automatically.
+# Everything is optional; flags and environment variables override this file.
+
+# Where the catalog lives. Not inside any drive you catalog. Default: ~/.local/share/driveaudit/catalog.db
+# db = "~/driveaudit/catalog.db"
+
+# Drive names (as shown by `driveaudit drives`) that are your source of truth, in addition
+# to any marked with `driveaudit mark NAME`.
+# reference = ["nas"]
+
+[scan]
+# Added to the built-in skip lists (.Trashes, @Recycle, System Volume Information, .DS_Store, ...).
+# Anything skipped is NOT covered by the catalog, so keep these short.
+# extra_skip_dirs = ["node_modules", ".git"]
+# extra_skip_files = ["Thumbs.db"]
+# extra_skip_extensions = [".bak"]
+# include_time_machine = false
+# cross_devices = false        # descend into other volumes mounted inside a tree
+
+[watch]
+# Directories whose children are mount points. macOS: /Volumes.  Linux: /media and /mnt.
+roots = ["/Volumes"]
+# interval = 5                 # seconds between polls
+# settle = 3                   # seconds to wait after a volume appears
+# hash = false                 # hash duplicate candidates after each walk
+# ignore = ["Macintosh HD", "Time Machine Backups"]   # volume labels never to catalog
